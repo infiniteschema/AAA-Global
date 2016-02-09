@@ -30,12 +30,13 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
 
 /* general */
 function aaa_wp_enqueue_scripts() {
-	wp_enqueue_style('aaa-global', plugins_url('style.css', __FILE__));
+	wp_enqueue_style('aaa-global', plugins_url('global.css', __FILE__));
+	wp_enqueue_script('aaa-global', plugins_url('global.js', __FILE__), array('jquery'), false, true);
 }
 add_action('wp_enqueue_scripts', 'aaa_wp_enqueue_scripts');
 
 function aaa_admin_enqueue_scripts() {
-	wp_enqueue_style('aaa-global', plugins_url('admin.css', __FILE__));
+	wp_enqueue_style('aaa-global', plugins_url('global-admin.css', __FILE__));
 }
 add_action('admin_enqueue_scripts', 'aaa_admin_enqueue_scripts');
 
